@@ -1,0 +1,47 @@
+--CREATE TABLE Cliente
+--(
+--ClienteID INT PRIMARY KEY,
+--ObraSocialID INT NULL,
+--nombreCliente VARCHAR(50) NOT NULL,
+--dniCliente NVARCHAR(30) NOT NULL UNIQUE, --NVARCHAR es unicode, permite letras de otros idiomas
+--FOREIGN KEY (ObraSocialID) REFERENCES ObraSocial(ObraSocialID)
+--);
+
+--CREATE TABLE Empleado
+--(
+--EmpleadoID INT PRIMARY KEY,
+--nombreEmp VARCHAR(50) NOT NULL,
+--dniEmp NVARCHAR(30) NOT NULL UNIQUE
+--);
+
+--CREATE TABLE Medicamento
+--(
+--MedicamentoID INT PRIMARY KEY,
+--nombreMedic VARCHAR(50) NOT NULL,
+--stock INT,
+--precio_unitario DECIMAL(10,2) NOT NULL
+--);
+
+--CREATE TABLE Venta
+--(
+--VentaID INT PRIMARY KEY,
+--ClienteID INT NOT NULL,
+--EmpleadoID INT NOT NULL,
+--fecha DATETIME NOT NULL,
+--total DECIMAL(10,2) NOT NULL,
+--descuentoAplicado DECIMAL(10,2) NULL,
+--FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID),
+--FOREIGN KEY (EmpleadoID) REFERENCES Empleado(EmpleadoID)
+--);
+
+--CREATE TABLE DetalleVenta
+--(
+--VentaID INT,
+--MedicamentoID INT,
+--cantidad INT NOT NULL,
+--precio_unitventa DECIMAL(10,2) NOT NULL,
+--subtotal DECIMAL(10,2) NOT NULL,
+--PRIMARY KEY (VentaID, MedicamentoID),
+--FOREIGN KEY (VentaID) REFERENCES Venta(VentaID),
+--FOREIGN KEY (MedicamentoID) REFERENCES Medicamento(MedicamentoID)
+--);

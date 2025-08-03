@@ -1,0 +1,9 @@
+--CLIENTES QUE HAYAN HECHO COMPRAS MAYORES A $3000
+--SELECT nombreCliente
+--FROM Cliente
+--WHERE ClienteID IN
+--(
+--SELECT ClienteID
+--FROM Venta
+--WHERE total > 3000
+--);
